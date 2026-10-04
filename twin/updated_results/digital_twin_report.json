@@ -1,0 +1,1109 @@
+{
+  "params": {
+    "reservoir_pinn": 51330,
+    "srp_pinn": 46201,
+    "total": 97531
+  },
+  "data_qc": {
+    "GILMANOV_REF_WELL": {
+      "rows": 620,
+      "cum_oil_consistency_pct": 0.0,
+      "heated_radius_vs_energy_balance_pct": 11.925
+    },
+    "BGW_analogue_A": {
+      "rows": 720,
+      "cum_oil_consistency_pct": 0.0,
+      "heated_radius_vs_energy_balance_pct": 13.306
+    },
+    "BGW_analogue_B": {
+      "rows": 720,
+      "cum_oil_consistency_pct": 0.0,
+      "heated_radius_vs_energy_balance_pct": 13.234
+    },
+    "BGW_analogue_C": {
+      "rows": 720,
+      "cum_oil_consistency_pct": 0.0,
+      "heated_radius_vs_energy_balance_pct": 11.391
+    }
+  },
+  "rows_used": 2780,
+  "rows_in_file": 2780,
+  "reservoir_validation": {
+    "BGW_analogue_A": {
+      "T_MAE_K": 0.21,
+      "Q_MAPE_pct": 0.22,
+      "cum_oil_error_pct": -0.2
+    },
+    "BGW_analogue_B": {
+      "T_MAE_K": 0.22,
+      "Q_MAPE_pct": 0.13,
+      "cum_oil_error_pct": 0.07
+    },
+    "BGW_analogue_C": {
+      "T_MAE_K": 0.15,
+      "Q_MAPE_pct": 0.14,
+      "cum_oil_error_pct": 0.09
+    },
+    "GILMANOV_REF_WELL": {
+      "T_MAE_K": 0.29,
+      "Q_MAPE_pct": 0.31,
+      "cum_oil_error_pct": 0.02
+    }
+  },
+  "srp_validation": {
+    "Case1_Lufkin_C114": {
+      "surface_load_MAE_lbf": 2.7,
+      "pump_pos_MAE_ft": 0.0015,
+      "pump_load_MAE_lbf": 9.9,
+      "diagnosis": {
+        "min_surface_load_lbf": 2030.6,
+        "max_surface_load_lbf": 3213.1,
+        "rod_float_margin": 0.774,
+        "rod_floating": false,
+        "pump_load_range_lbf": 69.5,
+        "pump_state": "NO FLUID-LOAD TRANSFER (gas lock / worn valves / free-end synthetic card)",
+        "fillage": null
+      }
+    },
+    "Case2_American_C228": {
+      "surface_load_MAE_lbf": 2.1,
+      "pump_pos_MAE_ft": 0.0024,
+      "pump_load_MAE_lbf": 7.8,
+      "diagnosis": {
+        "min_surface_load_lbf": 373.7,
+        "max_surface_load_lbf": 1286.9,
+        "rod_float_margin": 0.448,
+        "rod_floating": false,
+        "pump_load_range_lbf": 51.3,
+        "pump_state": "NO FLUID-LOAD TRANSFER (gas lock / worn valves / free-end synthetic card)",
+        "fillage": null
+      }
+    },
+    "Case3_Lufkin_M228": {
+      "surface_load_MAE_lbf": 6.8,
+      "pump_pos_MAE_ft": 0.0008,
+      "pump_load_MAE_lbf": 9.5,
+      "diagnosis": {
+        "min_surface_load_lbf": 2201.4,
+        "max_surface_load_lbf": 3208.2,
+        "rod_float_margin": 0.812,
+        "rod_floating": false,
+        "pump_load_range_lbf": 64.1,
+        "pump_state": "NO FLUID-LOAD TRANSFER (gas lock / worn valves / free-end synthetic card)",
+        "fillage": null
+      }
+    },
+    "Case4_Lufkin_C114b": {
+      "surface_load_MAE_lbf": 1.7,
+      "pump_pos_MAE_ft": 0.0022,
+      "pump_load_MAE_lbf": 9.4,
+      "diagnosis": {
+        "min_surface_load_lbf": 3714.8,
+        "max_surface_load_lbf": 4867.9,
+        "rod_float_margin": 0.865,
+        "rod_floating": false,
+        "pump_load_range_lbf": 65.0,
+        "pump_state": "NO FLUID-LOAD TRANSFER (gas lock / worn valves / free-end synthetic card)",
+        "fillage": null
+      }
+    }
+  },
+  "srp_damping_per_s": {
+    "value": 1.0,
+    "mode": "fixed (E&J)",
+    "generator_true_value": 1.0
+  },
+  "real_field_cycle_decline": {
+    "fitted_decline_factor_per_cycle": 1.0051,
+    "within_well_R2": 0.0009,
+    "n_cycles_used": 49,
+    "n_wells": 7,
+    "decline_used": 0.85,
+    "note": "No identifiable cycle-to-cycle OSR decline in the real records (cycle-level noise dominates); planning uses CAL=ASSUMED default. Refit on Baghewala CSS cycle records."
+  },
+  "field_calibration": {
+    "method": "joint fixed point: rc <- uplift, J_mult <- rate, steam rate <- OSR (physics oracle)",
+    "schedule_assumed_for_targets": {
+      "t_inj": 12.0,
+      "t_soak": 2.0,
+      "t_prod": 180.0
+    },
+    "targets": {
+      "rate_per_well_bpd": {
+        "low": 17.0,
+        "mid": 26.0,
+        "high": 36.0,
+        "source": "Oil India: >600 bpd from 35 producing wells (oil-india.com/rajasthan-fields); record 1,202 bpd from 33 producing wells, FY2025-26 (press, 2026)"
+      },
+      "steam_uplift_x": {
+        "low": 5.0,
+        "mid": 5.5,
+        "high": 6.0,
+        "source": "Oil India first CSS pilot: 5-6 fold production increase after steam injection"
+      },
+      "cycle_OSR": {
+        "low": 0.19,
+        "mid": 0.43,
+        "high": 1.0,
+        "source": "Sheng, Enhanced Oil Recovery Field Case Studies, Ch.16 (CSS): P50 OSR of actual CSS field data = 0.43; case histories 0.19-1.0. ANALOGUE statistic, not Baghewala."
+      }
+    },
+    "calibrated": {
+      "drainage_radius_m": 62.05,
+      "productivity_multiplier": 3.926,
+      "steam_rate_t_per_day": 144.2,
+      "steam_per_cycle_bbl_cwe": 10884.0,
+      "heated_radius_m": 18.68
+    },
+    "before": {
+      "avg_rate_bpd": 2.65,
+      "uplift_x": 2.53,
+      "cycle_OSR": 0.295,
+      "steam_rate_t_per_day": 21.4
+    },
+    "after": {
+      "avg_rate_bpd": 26.0,
+      "uplift_x": 5.5,
+      "cycle_OSR": 0.43,
+      "cold_rate_bpd": 4.97
+    },
+    "caveats": [
+      "Calibrated to FIELD AVERAGES, not to well histories: three numbers fix three parameters, so there is no independent validation of the calibration.",
+      "The OSR target is an analogue statistic (Sheng Ch.16), not a Baghewala figure.",
+      "Uplift could equally come from near-wellbore skin removal; drainage radius and skin are not separable with these data.",
+      "Field average includes later cycles and different schedules; the fit assumes the current 12/2/180 schedule."
+    ]
+  },
+  "css_optimisation": {
+    "baseline_schedule": {
+      "t_inj": 12.0,
+      "t_soak": 2.0,
+      "t_prod": 180.0
+    },
+    "baseline_kpis_pinn": {
+      "oil_bbl": 4585.052,
+      "incremental_oil_vs_cold_bbl": 3620.719,
+      "incremental_profit_per_day": 957.599,
+      "incremental_SOR": 3.006,
+      "opex_coverage": 12.802,
+      "steam_cwe_bbl": 10883.721,
+      "SOR": 2.374,
+      "kwh": 6631.363,
+      "kwh_per_bbl_oil": 1.446,
+      "profit": 225108.531,
+      "profit_per_day": 1160.353,
+      "cost_per_bbl": 15.904,
+      "days": 194.0
+    },
+    "optimal_schedule_pinn": {
+      "t_inj": 24.98,
+      "t_soak": 1.02,
+      "t_prod": 298.92
+    },
+    "optimal_kpis_pinn": {
+      "oil_bbl": 9600.103,
+      "incremental_oil_vs_cold_bbl": 7984.971,
+      "incremental_profit_per_day": 1279.625,
+      "incremental_SOR": 2.838,
+      "opex_coverage": 16.004,
+      "steam_cwe_bbl": 22660.014,
+      "SOR": 2.36,
+      "kwh": 13849.604,
+      "kwh_per_bbl_oil": 1.443,
+      "profit": 481660.75,
+      "profit_per_day": 1482.378,
+      "cost_per_bbl": 14.828,
+      "days": 324.924
+    },
+    "optimal_kpis_physics_check": {
+      "oil_bbl": 9907.297,
+      "incremental_oil_vs_cold_bbl": 8292.166,
+      "incremental_profit_per_day": 1341.012,
+      "incremental_SOR": 2.733,
+      "opex_coverage": 16.516,
+      "steam_cwe_bbl": 22660.014,
+      "SOR": 2.287,
+      "kwh": 14064.513,
+      "kwh_per_bbl_oil": 1.42,
+      "profit": 501606.875,
+      "profit_per_day": 1543.765,
+      "cost_per_bbl": 14.37,
+      "days": 324.924
+    },
+    "physics_grid_optimum": {
+      "t_inj": 25.0,
+      "t_soak": 1.0,
+      "t_prod": 300.0
+    },
+    "physics_grid_optimum_kpis": {
+      "oil_bbl": 9943.025,
+      "incremental_oil_vs_cold_bbl": 8322.547,
+      "incremental_profit_per_day": 1342.438,
+      "incremental_SOR": 2.724,
+      "opex_coverage": 16.521,
+      "steam_cwe_bbl": 22674.42,
+      "SOR": 2.28,
+      "kwh": 14094.044,
+      "kwh_per_bbl_oil": 1.417,
+      "profit": 503732.312,
+      "profit_per_day": 1545.191,
+      "cost_per_bbl": 14.338,
+      "days": 326.0
+    },
+    "SOR_vs_profit_tradeoff": [
+      {
+        "SOR_cap": 0.552,
+        "incremental_profit_per_day": 710.8,
+        "SOR": 0.541,
+        "t_inj": 3.0,
+        "t_soak": 1.0,
+        "t_prod": 300.0
+      },
+      {
+        "SOR_cap": 0.984,
+        "incremental_profit_per_day": 886.5,
+        "SOR": 0.893,
+        "t_inj": 6.0,
+        "t_soak": 1.0,
+        "t_prod": 300.0
+      },
+      {
+        "SOR_cap": 1.416,
+        "incremental_profit_per_day": 1061.3,
+        "SOR": 1.358,
+        "t_inj": 11.0,
+        "t_soak": 1.0,
+        "t_prod": 300.0
+      },
+      {
+        "SOR_cap": 1.848,
+        "incremental_profit_per_day": 1202.5,
+        "SOR": 1.804,
+        "t_inj": 17.0,
+        "t_soak": 1.0,
+        "t_prod": 300.0
+      },
+      {
+        "SOR_cap": 2.28,
+        "incremental_profit_per_day": 1326.8,
+        "SOR": 2.227,
+        "t_inj": 24.0,
+        "t_soak": 1.0,
+        "t_prod": 300.0
+      }
+    ],
+    "bounds_active": [
+      "t_inj",
+      "t_soak",
+      "t_prod"
+    ],
+    "recommended_balanced_schedule": {
+      "t_inj": 24.0,
+      "t_soak": 1.0,
+      "t_prod": 300.0
+    },
+    "recommended_balanced_kpis_pinn": {
+      "oil_bbl": 9475.179,
+      "incremental_oil_vs_cold_bbl": 7859.671,
+      "incremental_profit_per_day": 1266.739,
+      "incremental_SOR": 2.77,
+      "opex_coverage": 15.792,
+      "steam_cwe_bbl": 21767.441,
+      "SOR": 2.297,
+      "kwh": 13481.223,
+      "kwh_per_bbl_oil": 1.423,
+      "profit": 477585.0,
+      "profit_per_day": 1469.492,
+      "cost_per_bbl": 14.596,
+      "days": 325.0
+    },
+    "optimal_steam_cwe_bbl": 21767.441,
+    "delta_vs_baseline": {
+      "incremental_profit_per_day_pct": 32.3,
+      "SOR_change_pct": -3.2,
+      "oil_per_cycle_day_pct": 23.4
+    },
+    "multi_cycle_plan": [
+      {
+        "cycle": 1,
+        "oil_bbl": 9475.2,
+        "incremental_profit": 411690.0,
+        "cSOR": 2.3
+      },
+      {
+        "cycle": 2,
+        "oil_bbl": 8053.9,
+        "incremental_profit": 319307.0,
+        "cSOR": 2.48
+      },
+      {
+        "cycle": 3,
+        "oil_bbl": 6845.8,
+        "incremental_profit": 240782.0,
+        "cSOR": 2.68
+      },
+      {
+        "cycle": 4,
+        "oil_bbl": 5818.9,
+        "incremental_profit": 174035.0,
+        "cSOR": 2.88
+      },
+      {
+        "cycle": 5,
+        "oil_bbl": 4946.1,
+        "incremental_profit": 117300.0,
+        "cSOR": 3.1
+      },
+      {
+        "cycle": 6,
+        "oil_bbl": 4204.2,
+        "incremental_profit": 69076.0,
+        "cSOR": 3.32
+      }
+    ],
+    "marginal_value_of_steam_usd_per_bbl_cwe": 7.09,
+    "steam_cost_usd_per_bbl_cwe": 4.5,
+    "binding_constraint": "steam availability (max_injection_days) -- allocate generator capacity to the wells with the highest marginal value of steam",
+    "recommended_same_steam_schedule": {
+      "t_inj": 12.0,
+      "t_soak": 1.0,
+      "t_prod": 300.0
+    },
+    "recommended_same_steam_kpis_pinn": {
+      "oil_bbl": 7346.165,
+      "incremental_oil_vs_cold_bbl": 5790.307,
+      "incremental_profit_per_day": 1043.596,
+      "incremental_SOR": 1.88,
+      "opex_coverage": 12.713,
+      "steam_cwe_bbl": 10883.721,
+      "SOR": 1.482,
+      "kwh": 8565.518,
+      "kwh_per_bbl_oil": 1.166,
+      "profit": 390107.438,
+      "profit_per_day": 1246.35,
+      "cost_per_bbl": 11.896,
+      "days": 313.0
+    },
+    "same_steam_delta_vs_baseline": {
+      "incremental_profit_per_day_pct": 9.0,
+      "SOR_change_pct": -37.6,
+      "steam_per_year_change_pct": -38.0,
+      "oil_per_day_change_pct": -0.7
+    },
+    "schedule_used_downstream": "same-steam",
+    "steaming_beats_cold_production": true,
+    "cycle_profitable_after_all_costs": true
+  },
+  "baghewala_field_forecast": {
+    "condition_ranges": {
+      "T0": {
+        "low": 319.15,
+        "P50": 320.15,
+        "high": 321.15
+      },
+      "mu_cold": {
+        "low": 8.0,
+        "P50": 11.0,
+        "high": 15.0
+      },
+      "mu_hot": {
+        "low": 0.2,
+        "P50": 0.3,
+        "high": 0.5
+      },
+      "k_md": {
+        "low": 100.0,
+        "P50": 150.0,
+        "high": 250.0
+      },
+      "h": {
+        "low": 15.0,
+        "P50": 20.0,
+        "high": 25.0
+      },
+      "Ts": {
+        "low": 610.0,
+        "P50": 610.0,
+        "high": 620.0
+      }
+    },
+    "current_schedule": {
+      "n_wells": 400,
+      "schedule": {
+        "t_inj": 12.0,
+        "t_soak": 2.0,
+        "t_prod": 180.0
+      },
+      "cycle_oil_bbl": {
+        "P10": 3015.83,
+        "P50": 4661.96,
+        "P90": 7100.52
+      },
+      "cycle_SOR": {
+        "P10": 1.53,
+        "P50": 2.33,
+        "P90": 3.61
+      },
+      "cold_rate_no_steam_bpd": {
+        "P10": 3.27,
+        "P50": 5.2,
+        "P90": 8.11
+      },
+      "incremental_oil_vs_cold_bbl": {
+        "P10": 2394.92,
+        "P50": 3669.13,
+        "P90": 5513.27
+      },
+      "share_of_wells_where_steaming_adds_oil": 1.0,
+      "peak_rate_bpd": {
+        "P10": 18.71,
+        "P50": 29.14,
+        "P90": 43.88
+      },
+      "rate_day90_bpd": {
+        "P10": 16.65,
+        "P50": 25.69,
+        "P90": 39.2
+      },
+      "T_day90_K": {
+        "P10": 499.98,
+        "P50": 502.72,
+        "P90": 505.78
+      },
+      "T_day180_K": {
+        "P10": 475.88,
+        "P50": 480.08,
+        "P90": 483.88
+      },
+      "pinn_vs_physics_cycle_oil_MAPE_pct": 2.19
+    },
+    "recommended_schedule": {
+      "n_wells": 400,
+      "schedule": {
+        "t_inj": 12.0,
+        "t_soak": 1.0,
+        "t_prod": 300.0
+      },
+      "cycle_oil_bbl": {
+        "P10": 4847.19,
+        "P50": 7449.16,
+        "P90": 11414.36
+      },
+      "cycle_SOR": {
+        "P10": 0.95,
+        "P50": 1.46,
+        "P90": 2.25
+      },
+      "cold_rate_no_steam_bpd": {
+        "P10": 3.27,
+        "P50": 5.2,
+        "P90": 8.11
+      },
+      "incremental_oil_vs_cold_bbl": {
+        "P10": 3861.14,
+        "P50": 5843.38,
+        "P90": 8840.78
+      },
+      "share_of_wells_where_steaming_adds_oil": 1.0,
+      "peak_rate_bpd": {
+        "P10": 18.79,
+        "P50": 29.37,
+        "P90": 44.19
+      },
+      "rate_day90_bpd": {
+        "P10": 16.66,
+        "P50": 25.71,
+        "P90": 39.25
+      },
+      "T_day90_K": {
+        "P10": 500.29,
+        "P50": 503.06,
+        "P90": 506.09
+      },
+      "T_day180_K": {
+        "P10": 476.09,
+        "P50": 480.28,
+        "P90": 484.09
+      },
+      "pinn_vs_physics_cycle_oil_MAPE_pct": 3.01
+    }
+  },
+  "field_steam_allocation": {
+    "n_wells": 33,
+    "steam_budget_bbl_cwe_per_yr": 675744.0,
+    "shadow_price_of_steam_usd_per_bbl_cwe": 5.24,
+    "current_practice_12_2_180": {
+      "field_oil_bpd": 799.0,
+      "field_steam_bbl_cwe_per_yr": 675744.0,
+      "field_SOR": 2.317,
+      "incremental_profit_usd_per_yr": 11753265.0,
+      "mean_recovery_factor_10yr_pct": 12.6
+    },
+    "same_steam_per_cycle_12_1_300": {
+      "field_oil_bpd": 793.7,
+      "field_steam_bbl_cwe_per_yr": 418832.0,
+      "field_SOR": 1.446,
+      "incremental_profit_usd_per_yr": 12793235.0,
+      "mean_recovery_factor_10yr_pct": 18.0
+    },
+    "allocated_same_field_budget": {
+      "field_oil_bpd": 936.3,
+      "field_steam_bbl_cwe_per_yr": 672514.0,
+      "field_SOR": 1.968,
+      "incremental_profit_usd_per_yr": 15021216.0,
+      "mean_recovery_factor_10yr_pct": 21.6
+    },
+    "allocation_injection_days_histogram": {
+      "8": 2,
+      "10": 1,
+      "12": 4,
+      "15": 3,
+      "18": 1,
+      "21": 8,
+      "25": 14
+    },
+    "field_oil_change_pct_vs_current": 17.2,
+    "field_SOR_change_pct_vs_current": -15.1,
+    "recovery_assumptions": {
+      "oil_saturation": 0.8,
+      "Bo": 1.05,
+      "horizon_years": 10
+    },
+    "per_well": [
+      {
+        "k_md": 123,
+        "h_m": 18.0,
+        "mu_cold_Pa_s": 14.1,
+        "t_inj_days": 8
+      },
+      {
+        "k_md": 154,
+        "h_m": 18.0,
+        "mu_cold_Pa_s": 13.4,
+        "t_inj_days": 12
+      },
+      {
+        "k_md": 166,
+        "h_m": 25.0,
+        "mu_cold_Pa_s": 10.6,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 116,
+        "h_m": 21.1,
+        "mu_cold_Pa_s": 14.9,
+        "t_inj_days": 12
+      },
+      {
+        "k_md": 232,
+        "h_m": 21.3,
+        "mu_cold_Pa_s": 11.1,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 119,
+        "h_m": 21.9,
+        "mu_cold_Pa_s": 9.3,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 115,
+        "h_m": 17.7,
+        "mu_cold_Pa_s": 8.0,
+        "t_inj_days": 12
+      },
+      {
+        "k_md": 197,
+        "h_m": 15.9,
+        "mu_cold_Pa_s": 13.6,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 173,
+        "h_m": 15.6,
+        "mu_cold_Pa_s": 13.8,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 142,
+        "h_m": 24.8,
+        "mu_cold_Pa_s": 8.8,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 115,
+        "h_m": 19.4,
+        "mu_cold_Pa_s": 11.9,
+        "t_inj_days": 10
+      },
+      {
+        "k_md": 122,
+        "h_m": 21.7,
+        "mu_cold_Pa_s": 8.5,
+        "t_inj_days": 15
+      },
+      {
+        "k_md": 217,
+        "h_m": 24.4,
+        "mu_cold_Pa_s": 12.1,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 234,
+        "h_m": 20.5,
+        "mu_cold_Pa_s": 8.8,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 141,
+        "h_m": 19.1,
+        "mu_cold_Pa_s": 12.0,
+        "t_inj_days": 15
+      },
+      {
+        "k_md": 165,
+        "h_m": 18.2,
+        "mu_cold_Pa_s": 13.9,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 112,
+        "h_m": 24.7,
+        "mu_cold_Pa_s": 10.1,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 137,
+        "h_m": 20.9,
+        "mu_cold_Pa_s": 11.1,
+        "t_inj_days": 15
+      },
+      {
+        "k_md": 230,
+        "h_m": 16.5,
+        "mu_cold_Pa_s": 11.1,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 113,
+        "h_m": 19.2,
+        "mu_cold_Pa_s": 12.8,
+        "t_inj_days": 8
+      },
+      {
+        "k_md": 160,
+        "h_m": 22.3,
+        "mu_cold_Pa_s": 11.9,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 137,
+        "h_m": 24.5,
+        "mu_cold_Pa_s": 10.1,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 150,
+        "h_m": 24.8,
+        "mu_cold_Pa_s": 9.5,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 170,
+        "h_m": 19.3,
+        "mu_cold_Pa_s": 14.1,
+        "t_inj_days": 18
+      },
+      {
+        "k_md": 148,
+        "h_m": 20.2,
+        "mu_cold_Pa_s": 14.3,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 193,
+        "h_m": 21.3,
+        "mu_cold_Pa_s": 13.3,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 105,
+        "h_m": 17.1,
+        "mu_cold_Pa_s": 10.3,
+        "t_inj_days": 12
+      },
+      {
+        "k_md": 155,
+        "h_m": 20.9,
+        "mu_cold_Pa_s": 8.6,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 178,
+        "h_m": 21.4,
+        "mu_cold_Pa_s": 14.6,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 211,
+        "h_m": 22.3,
+        "mu_cold_Pa_s": 10.4,
+        "t_inj_days": 25
+      },
+      {
+        "k_md": 162,
+        "h_m": 24.2,
+        "mu_cold_Pa_s": 13.2,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 126,
+        "h_m": 16.9,
+        "mu_cold_Pa_s": 8.1,
+        "t_inj_days": 21
+      },
+      {
+        "k_md": 186,
+        "h_m": 15.2,
+        "mu_cold_Pa_s": 11.6,
+        "t_inj_days": 25
+      }
+    ]
+  },
+  "srp_operation": {
+    "optimised (recommended CSS + SRP optimiser)": {
+      "label": "optimised",
+      "cum_oil_bbl": 7304.0,
+      "cum_water_bbl": 4996.3,
+      "energy_kwh": 5458.1,
+      "kwh_per_bbl_oil": 0.75,
+      "mean_fillage": 0.993,
+      "mean_vol_eff": 0.882,
+      "mean_run_time_frac": 0.428,
+      "days_rod_floating": 0,
+      "days_impact_over_limit": 0,
+      "days_unsetting_risk": 0,
+      "max_goodman_loading": 0.551,
+      "max_impact_lbf": 724.0
+    },
+    "baseline (current CSS + fixed speed, no POC)": {
+      "label": "fixed 8 SPM / 86 in",
+      "cum_oil_bbl": 4383.5,
+      "cum_water_bbl": 4992.6,
+      "energy_kwh": 13911.2,
+      "kwh_per_bbl_oil": 3.17,
+      "mean_fillage": 0.321,
+      "mean_vol_eff": 0.287,
+      "mean_run_time_frac": 1.0,
+      "days_rod_floating": 0,
+      "days_impact_over_limit": 168,
+      "days_unsetting_risk": 10,
+      "max_goodman_loading": 0.672,
+      "max_impact_lbf": 3027.0
+    },
+    "advice": [],
+    "setpoint_samples": [
+      {
+        "day": 0.0,
+        "T_res_K": 571.569,
+        "mu_liquid": 0.001,
+        "spm": 10.0,
+        "vfd_Hz": 75.0,
+        "stroke_in": 86.0,
+        "run_frac": 1.0,
+        "fillage": 1.0,
+        "rod_float_index": 0.14,
+        "impact_lbf": 0.0
+      },
+      {
+        "day": 15.0,
+        "T_res_K": 537.922,
+        "mu_liquid": 0.002,
+        "spm": 9.7,
+        "vfd_Hz": 72.75,
+        "stroke_in": 86.0,
+        "run_frac": 0.7,
+        "fillage": 0.993,
+        "rod_float_index": 0.132,
+        "impact_lbf": 617.918
+      },
+      {
+        "day": 30.0,
+        "T_res_K": 526.324,
+        "mu_liquid": 0.006,
+        "spm": 9.6,
+        "vfd_Hz": 72.0,
+        "stroke_in": 86.0,
+        "run_frac": 0.45,
+        "fillage": 0.992,
+        "rod_float_index": 0.13,
+        "impact_lbf": 646.702
+      },
+      {
+        "day": 45.0,
+        "T_res_K": 518.035,
+        "mu_liquid": 0.016,
+        "spm": 9.8,
+        "vfd_Hz": 73.5,
+        "stroke_in": 86.0,
+        "run_frac": 0.3,
+        "fillage": 0.997,
+        "rod_float_index": 0.138,
+        "impact_lbf": 401.751
+      },
+      {
+        "day": 60.0,
+        "T_res_K": 511.364,
+        "mu_liquid": 0.052,
+        "spm": 8.8,
+        "vfd_Hz": 66.0,
+        "stroke_in": 86.0,
+        "run_frac": 0.25,
+        "fillage": 0.992,
+        "rod_float_index": 0.119,
+        "impact_lbf": 607.879
+      },
+      {
+        "day": 75.0,
+        "T_res_K": 505.688,
+        "mu_liquid": 0.149,
+        "spm": 7.1,
+        "vfd_Hz": 53.25,
+        "stroke_in": 86.0,
+        "run_frac": 0.25,
+        "fillage": 0.994,
+        "rod_float_index": 0.096,
+        "impact_lbf": 428.804
+      },
+      {
+        "day": 90.0,
+        "T_res_K": 500.698,
+        "mu_liquid": 0.342,
+        "spm": 7.2,
+        "vfd_Hz": 54.0,
+        "stroke_in": 74.0,
+        "run_frac": 0.25,
+        "fillage": 0.998,
+        "rod_float_index": 0.114,
+        "impact_lbf": 219.754
+      },
+      {
+        "day": 105.0,
+        "T_res_K": 496.217,
+        "mu_liquid": 0.614,
+        "spm": 4.7,
+        "vfd_Hz": 35.25,
+        "stroke_in": 86.0,
+        "run_frac": 0.3,
+        "fillage": 0.988,
+        "rod_float_index": 0.102,
+        "impact_lbf": 386.853
+      },
+      {
+        "day": 120.0,
+        "T_res_K": 492.133,
+        "mu_liquid": 0.901,
+        "spm": 3.8,
+        "vfd_Hz": 28.5,
+        "stroke_in": 86.0,
+        "run_frac": 0.35,
+        "fillage": 0.988,
+        "rod_float_index": 0.104,
+        "impact_lbf": 318.734
+      },
+      {
+        "day": 135.0,
+        "T_res_K": 488.369,
+        "mu_liquid": 1.148,
+        "spm": 3.2,
+        "vfd_Hz": 24.0,
+        "stroke_in": 86.0,
+        "run_frac": 0.4,
+        "fillage": 0.988,
+        "rod_float_index": 0.105,
+        "impact_lbf": 265.704
+      },
+      {
+        "day": 150.0,
+        "T_res_K": 484.868,
+        "mu_liquid": 1.338,
+        "spm": 3.1,
+        "vfd_Hz": 23.25,
+        "stroke_in": 86.0,
+        "run_frac": 0.4,
+        "fillage": 0.994,
+        "rod_float_index": 0.115,
+        "impact_lbf": 183.456
+      },
+      {
+        "day": 165.0,
+        "T_res_K": 481.591,
+        "mu_liquid": 1.478,
+        "spm": 2.7,
+        "vfd_Hz": 20.25,
+        "stroke_in": 86.0,
+        "run_frac": 0.45,
+        "fillage": 0.996,
+        "rod_float_index": 0.108,
+        "impact_lbf": 133.397
+      },
+      {
+        "day": 180.0,
+        "T_res_K": 478.504,
+        "mu_liquid": 1.582,
+        "spm": 3.0,
+        "vfd_Hz": 22.5,
+        "stroke_in": 86.0,
+        "run_frac": 0.4,
+        "fillage": 0.994,
+        "rod_float_index": 0.129,
+        "impact_lbf": 178.243
+      },
+      {
+        "day": 195.0,
+        "T_res_K": 475.583,
+        "mu_liquid": 1.662,
+        "spm": 3.1,
+        "vfd_Hz": 23.25,
+        "stroke_in": 74.0,
+        "run_frac": 0.45,
+        "fillage": 0.993,
+        "rod_float_index": 0.12,
+        "impact_lbf": 171.079
+      },
+      {
+        "day": 210.0,
+        "T_res_K": 472.808,
+        "mu_liquid": 1.728,
+        "spm": 2.6,
+        "vfd_Hz": 19.5,
+        "stroke_in": 86.0,
+        "run_frac": 0.45,
+        "fillage": 0.997,
+        "rod_float_index": 0.12,
+        "impact_lbf": 114.093
+      },
+      {
+        "day": 225.0,
+        "T_res_K": 470.161,
+        "mu_liquid": 1.784,
+        "spm": 2.6,
+        "vfd_Hz": 19.5,
+        "stroke_in": 86.0,
+        "run_frac": 0.45,
+        "fillage": 0.987,
+        "rod_float_index": 0.123,
+        "impact_lbf": 223.388
+      },
+      {
+        "day": 240.0,
+        "T_res_K": 467.629,
+        "mu_liquid": 1.835,
+        "spm": 2.3,
+        "vfd_Hz": 17.25,
+        "stroke_in": 86.0,
+        "run_frac": 0.5,
+        "fillage": 0.995,
+        "rod_float_index": 0.111,
+        "impact_lbf": 123.364
+      },
+      {
+        "day": 255.0,
+        "T_res_K": 465.199,
+        "mu_liquid": 1.883,
+        "spm": 2.3,
+        "vfd_Hz": 17.25,
+        "stroke_in": 86.0,
+        "run_frac": 0.5,
+        "fillage": 0.986,
+        "rod_float_index": 0.114,
+        "impact_lbf": 203.727
+      },
+      {
+        "day": 270.0,
+        "T_res_K": 462.862,
+        "mu_liquid": 1.929,
+        "spm": 2.5,
+        "vfd_Hz": 18.75,
+        "stroke_in": 86.0,
+        "run_frac": 0.45,
+        "fillage": 0.999,
+        "rod_float_index": 0.127,
+        "impact_lbf": 0.0
+      },
+      {
+        "day": 285.0,
+        "T_res_K": 460.609,
+        "mu_liquid": 1.973,
+        "spm": 2.5,
+        "vfd_Hz": 18.75,
+        "stroke_in": 86.0,
+        "run_frac": 0.45,
+        "fillage": 0.991,
+        "rod_float_index": 0.13,
+        "impact_lbf": 179.848
+      }
+    ]
+  },
+  "cold_well_rod_floating_test": {
+    "T_K": 320.15,
+    "baseline": {
+      "spm": 8.0,
+      "vfd_Hz": 60.0,
+      "stroke_in": 86.0,
+      "run_frac": 1.0,
+      "rod_float_index": 2.252,
+      "MPRL": -8423.066,
+      "drag_lbf": 14551.114,
+      "fillage": 0.031,
+      "impact_lbf": 1051.35,
+      "q_oil": 4.971,
+      "kwh_day": 932.162
+    },
+    "optimised": {
+      "spm": 2.0,
+      "vfd_Hz": 15.0,
+      "stroke_in": 54.0,
+      "run_frac": 0.25,
+      "rod_float_index": 0.343,
+      "MPRL": 4417.724,
+      "drag_lbf": 2284.186,
+      "fillage": 0.822,
+      "impact_lbf": 350.173,
+      "q_oil": 4.971,
+      "kwh_day": 6.521
+    }
+  },
+  "expected_benefits_quantified": {
+    "schedule": "same-steam",
+    "oil_per_day_change_pct": -0.7,
+    "SOR_change_pct": -37.6,
+    "lifting_energy_kwh_per_bbl": {
+      "baseline": 3.17,
+      "optimised": 0.75
+    },
+    "rod_floating_days": {
+      "baseline": 0,
+      "optimised": 0
+    },
+    "impact_over_limit_days": {
+      "baseline": 168,
+      "optimised": 0
+    },
+    "pump_unsetting_risk_days": {
+      "baseline": 10,
+      "optimised": 0
+    },
+    "mean_pump_volumetric_efficiency": {
+      "baseline": 0.287,
+      "optimised": 0.882
+    },
+    "field_oil_change_pct_same_steam_budget": 17.2,
+    "field_recovery_factor_10yr_pct": {
+      "current_practice_12_2_180": 12.6,
+      "allocated_same_field_budget": 21.6
+    },
+    "note": "Magnitudes come from synthetic, uncalibrated reservoir data -- recalibrate with Baghewala production history (fine_tune_reservoir) before field use."
+  },
+  "runtime_s": 136.1
+}

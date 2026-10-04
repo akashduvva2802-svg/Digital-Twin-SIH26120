@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #ffffff; color: #1e3a5f; margin: 0; padding: 40px; width: 1400px; height: 750px; box-sizing: border-box; }
+        h1 { color: #1e3a5f; font-size: 28px; font-weight: 600; margin-bottom: 30px; }
+        .kpi-container { display: flex; gap: 20px; margin-bottom: 40px; }
+        .kpi-card { flex: 1; border-radius: 8px; padding: 25px 15px; text-align: center; height: 120px; }
+        .bg-blue { background-color: #eaf3fb; }
+        .bg-orange { background-color: #fbede1; }
+        .kpi-main { font-size: 42px; font-weight: bold; margin-bottom: 8px; }
+        .kpi-sub { font-size: 14px; color: #4a5568; line-height: 1.4; }
+        .text-blue { color: #1565c0; }
+        .text-orange { color: #e65100; }
+        .content-split { display: flex; gap: 40px; }
+        .left-col { flex: 5.5; }
+        .right-col { flex: 4.5; font-size: 17px; line-height: 1.5; color: #2d3748; }
+        .chart-title { font-size: 16px; font-weight: bold; color: #e65100; margin-bottom: 10px; }
+        .graph-img { width: 100%; object-fit: contain; }
+        .benefits-title { font-size: 22px; font-weight: bold; color: #1e3a5f; margin-bottom: 20px; }
+        .benefit-item { margin-bottom: 25px; }
+        .benefit-item strong { color: #1e3a5f; }
+    </style>
+</head>
+<body>
+    <h1>Impact for a Baghewala P50 well (optimised vs fixed-speed current practice)</h1>
+    
+    <div class="kpi-container">
+        <div class="kpi-card bg-blue">
+            <div class="kpi-main text-blue">-76 %</div>
+            <div class="kpi-sub">lifting energy<br>3.2 &rarr; 0.75 kWh/bbl</div>
+        </div>
+        <div class="kpi-card bg-orange">
+            <div class="kpi-main text-orange">168 &rarr; 0</div>
+            <div class="kpi-sub">days with impact load<br>over limit per cycle</div>
+        </div>
+        <div class="kpi-card bg-blue">
+            <div class="kpi-main text-blue">0.29 &rarr; 0.88</div>
+            <div class="kpi-sub">pump volumetric<br>efficiency</div>
+        </div>
+        <div class="kpi-card bg-orange">
+            <div class="kpi-main text-orange">+17 %</div>
+            <div class="kpi-sub">field oil output<br>(same steam budget)</div>
+        </div>
+        <div class="kpi-card bg-blue">
+            <div class="kpi-main text-blue">10 &rarr; 0</div>
+            <div class="kpi-sub">days at pump-unsetting<br>risk per cycle</div>
+        </div>
+    </div>
+    
+    <div class="content-split">
+        <div class="left-col">
+            <div class="chart-title">SRP twin tracks the well through the cycle</div>
+            <img class="graph-img" src="file:///C:/Akash/PINN_AND_DATA/scada_pinn/baghewala_scada_twin/scada/twin/updated_results/srp_operation.png" />
+        </div>
+        <div class="right-col">
+            <div class="benefits-title">Benefits</div>
+            <div class="benefit-item">
+                <strong>Economic:</strong> higher oil per cycle-day, steam steered to the wells where it earns most.
+            </div>
+            <div class="benefit-item">
+                <strong>Reliability:</strong> no rod-floating days, impact and unsetting risk removed, rod stress well within limits.
+            </div>
+            <div class="benefit-item">
+                <strong>Environmental:</strong> less electricity per barrel; operator can choose SOR optimally at a known profit cost.
+            </div>
+            <div class="benefit-item">
+                <strong>Social / national:</strong> more domestic heavy-oil output; method transfers to other Indian heavy-oil fields.
+            </div>
+            <div class="benefit-item">
+                <strong>Target users:</strong> OIL-Rajasthan production engineers, SRP field crews, reservoir planners.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

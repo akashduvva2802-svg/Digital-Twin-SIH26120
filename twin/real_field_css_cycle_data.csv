@@ -1,0 +1,50 @@
+field_name,country,well_id,cycle_no,cumulative_steam_injection_bbl,cumulative_oil_production_bbl,cosr_stb_per_stb,total_days_on_production,net_pay_over_gross_pay,drainage_volume_bbl,vertical_permeability_darcy,thermal_diffusivity_ft2_per_day
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-1,1,8137,14016,1.7,349,0.525,4338701,0.01003,1.82
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-1,2,16148,19115,1.2,473,0.525,4338701,0.01003,1.82
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-1,3,21879,32984,1.5,912,0.525,4338701,0.01003,1.82
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-1,4,31885,45361,1.4,1186,0.525,4338701,0.01003,1.82
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-1,5,47308,52010,1.1,1364,0.525,4338701,0.01003,1.82
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-1,6,61571,55416,0.90,1435,0.525,4338701,0.01003,1.82
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-2,1,10034,7714,0.77,240,0.50,8589752,0.03895,1.8228
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-2,2,20312,13603,0.67,422,0.50,8589752,0.03895,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,1,43967,3076,0.07,104,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,2,88299,11448,0.13,324,0.50,9290956,0.0213,1.8228
+Diatomite reservoir - Orcutt oil field,USA,Well_3,1,8080,420,0.05,177,0.80,13269316,0.0305,1.8228
+Diatomite reservoir - Orcutt oil field,USA,Well_3,2,16090,1000,0.06,277,0.80,13269316,0.0305,1.8228
+Tar Sand reservoir - Huntington Beach field,USA,Well_4,1,5884,28900,4.91,480,0.43,4508460,0.040,1.9995
+Tar Sand reservoir - Huntington Beach field,USA,Well_4,2,10204,59600,5.84,900,0.43,4508460,0.040,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,1,8278,143,0.017,16,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,2,20729,437,0.021,58,0.44,4601653,2300,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,1,6332,5585,0.88,120,0.89,33039379,1000,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,2,12511,14369,1.15,336,0.89,33039379,1000,1.9995
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-2,3,24614,16763,,547,0.50,8589752,0.03895,1.8228
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-2,4,35402,21499,,752,0.50,8589752,0.03895,1.8228
+Upper Dolomite reservoir - Issaran field,Egypt,Well_1-2,5,45405,24414,,850,0.50,8589752,0.03895,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,3,132788,19147,,533,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,4,177441,31381,,720,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,5,222125,41508,,887,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,6,281754,46408,,1057,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,7,326847,59082,,1212,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,8,372852,68511,,1381,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,9,460554,84695,,1553,0.50,9290956,0.0213,1.8228
+Buffalo Creek reservoir - Grosmont formation,Canada,Well_2,10,548614,97608,,1697,0.50,9290956,0.0213,1.8228
+Diatomite reservoir - Orcutt oil field,USA,Well_3,3,31230,2350,,427,0.80,13269316,0.0305,1.8228
+Diatomite reservoir - Orcutt oil field,USA,Well_3,4,35620,2940,,501,0.80,13269316,0.0305,1.8228
+Tar Sand reservoir - Huntington Beach field,USA,Well_4,3,21854,81300,,1410,0.43,4508460,0.040,1.9995
+Tar Sand reservoir - Huntington Beach field,USA,Well_4,4,37216,119100,,1920,0.43,4508460,0.040,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,3,29994,754,,93,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,4,37175,962,,128,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,5,44426,1223,,176,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,6,56764,1689,,235,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,7,68748,2040,,300,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,8,75501,2344,,343,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,9,88462,2758,,412,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,10,100760,3206,,472,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,11,113985,3401,,515,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,12,132017,3990,,586,0.44,4601653,2300,1.9995
+Well 8 Section 25 formation - Kern River field,USA,Well_5,13,141809,4528,,689,0.44,4601653,2300,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,3,17681,20071,,498,0.89,33039379,1000,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,4,22273,25969,,694,0.89,33039379,1000,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,5,27891,33187,,992,0.89,33039379,1000,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,6,32411,38324,,1254,0.89,33039379,1000,1.9995
+Buena Fe Fee Lease - Midway Sunset field,USA,Well_6,7,38075,45717,,1594,0.89,33039379,1000,1.9995
