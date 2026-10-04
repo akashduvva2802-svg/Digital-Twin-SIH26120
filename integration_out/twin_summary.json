@@ -1,0 +1,19 @@
+{
+  "mode": "twin",
+  "days": 5.0,
+  "oil_bbl": 59.0,
+  "water_bbl": 8.8,
+  "kwh": 128.9,
+  "kwh_per_bbl_oil": 2.19,
+  "runtime_frac": 0.176,
+  "impact_over_limit_h": 1.7,
+  "strokes": 5622,
+  "cards": 118,
+  "trips_low_load": 0,
+  "trips_high_load": 0,
+  "low_load_alarms": 0,
+  "writes_accepted": 21,
+  "writes_rejected": 1,
+  "watchdog_fallbacks": 1,
+  "wall_s": 120.0
+}

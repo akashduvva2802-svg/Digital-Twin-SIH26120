@@ -1,0 +1,100 @@
+{
+  "summary": {
+    "PASS": 9,
+    "FAIL": 0
+  },
+  "results": [
+    {
+      "id": "I1",
+      "test": "Historian holds every data type in the problem statement; twin configured itself from it",
+      "status": "PASS",
+      "evidence": "record counts {'production_daily': 10119, 'well_tests': 1415, 'css_cycles': 60, 'steam_injection_daily': 690, 'vfd_daily': 9870, 'rod_failures': 44, 'pump_unsetting': 10, 'completion': 10, 'fluid_properties': 10, 'pressure_surveys': 30}; twin read completion, fluid table (Andrade fit), pressure survey, well tests, failure history (2.0 failures/well-yr)"
+    },
+    {
+      "id": "I2",
+      "test": "Live data path: cards and tags flow SCADA -> OPC UA -> twin",
+      "status": "PASS",
+      "evidence": "118 cards captured by SCADA, 21 diagnosed by the twin (newest card each time)"
+    },
+    {
+      "id": "I3",
+      "test": "PLC rejects an out-of-bounds request from the twin (self-test)",
+      "status": "PASS",
+      "evidence": "PLC reply: 'SPM 20.00 outside [2.0, 10.0]'"
+    },
+    {
+      "id": "I4",
+      "test": "Twin set-points are applied by the PLC within bounds and ramp limits, with readback confirmation",
+      "status": "PASS",
+      "evidence": "21 writes accepted, 5 readback confirmations, SPM sequence [6.5, 5.0, 4.4, 3.9, 3.6, 3.2, 2.7, 2.2]"
+    },
+    {
+      "id": "I5",
+      "test": "Load-cell desync is detected and the twin holds (no set-point written on bad data)",
+      "status": "PASS",
+      "evidence": "1 decisions in the fault window, 1 SENSOR ALERT, 0 writes on bad data"
+    },
+    {
+      "id": "I6",
+      "test": "Twin outage: PLC watchdog falls back within the timeout and returns to REMOTE on recovery",
+      "status": "PASS",
+      "evidence": "twin offline at day 4.00, watchdog at 4.12 (+2.9 h), REMOTE again at 4.26; fallback: twin heartbeat lost -> LOCAL, holding last accepted set-point (2.70 SPM, run 0.25)"
+    },
+    {
+      "id": "I7",
+      "test": "Outcome vs current practice: fewer rod-floating trips and less impact, lower energy per barrel, oil not reduced",
+      "status": "PASS",
+      "evidence": "trips 10 -> 0; kWh/bbl 3.1 -> 2.19; impact h 4.6 -> 1.7; oil 58.6 -> 59.0 bbl"
+    },
+    {
+      "id": "I8",
+      "test": "Real-time: per-card decision latency (diagnosis + estimation + optimisation)",
+      "status": "PASS",
+      "evidence": "median 4.5 s, max 14.0 s (first card is a cold start), n=22"
+    },
+    {
+      "id": "I9",
+      "test": "Audit trail: every decision, request, readback and alarm is logged in the historian",
+      "status": "PASS",
+      "evidence": "21 decisions, 19 requests, 5 readbacks, 31 twin recommendations/alarms mirrored to SCADA"
+    }
+  ],
+  "baseline": {
+    "mode": "baseline (no twin)",
+    "days": 5.0,
+    "oil_bbl": 58.6,
+    "water_bbl": 8.7,
+    "kwh": 181.7,
+    "kwh_per_bbl_oil": 3.1,
+    "runtime_frac": 0.107,
+    "impact_over_limit_h": 4.6,
+    "strokes": 6136,
+    "cards": 82,
+    "trips_low_load": 10,
+    "trips_high_load": 0,
+    "low_load_alarms": 22,
+    "writes_accepted": 0,
+    "writes_rejected": 0,
+    "watchdog_fallbacks": 0,
+    "wall_s": 21.1
+  },
+  "twin": {
+    "mode": "twin",
+    "days": 5.0,
+    "oil_bbl": 59.0,
+    "water_bbl": 8.8,
+    "kwh": 128.9,
+    "kwh_per_bbl_oil": 2.19,
+    "runtime_frac": 0.176,
+    "impact_over_limit_h": 1.7,
+    "strokes": 5622,
+    "cards": 118,
+    "trips_low_load": 0,
+    "trips_high_load": 0,
+    "low_load_alarms": 0,
+    "writes_accepted": 21,
+    "writes_rejected": 1,
+    "watchdog_fallbacks": 1,
+    "wall_s": 120.0
+  }
+}

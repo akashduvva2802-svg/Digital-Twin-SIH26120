@@ -1,0 +1,4 @@
+No encrypting policy available, password may get transferred in plaintext
+Endpoints other than open requested but private key and certificate are not set.
+[SCADA] up at opc.tcp://127.0.0.1:4840/baghewala/scada/  mode=LOCAL  accel=10000000x  days=5.0
+[SCADA] SUMMARY {"mode": "baseline (no twin)", "days": 5.0, "oil_bbl": 58.6, "water_bbl": 8.7, "kwh": 181.7, "kwh_per_bbl_oil": 3.1, "runtime_frac": 0.107, "impact_over_limit_h": 4.6, "strokes": 6136, "cards": 82, "trips_low_load": 10, "trips_high_load": 0, "low_load_alarms": 22, "writes_accepted": 0, "writes_rejected": 0, "watchdog_fallbacks": 0, "wall_s": 21.1}
